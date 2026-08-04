@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="Chapter 1 of Bandit Diaries: the language of bandits, structured and unstructured settings, and recommendation systems."
+  >
+
+  <title>Chapter 1: The Language of Bandits | Bandit Diaries</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">SC</a>
+    <a href="/writing/bandit-diaries/">Bandit Diaries →</a>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <p class="eyebrow">Bandit Diaries · Chapter 1</p>
+
+      <h1>The Language of Bandits</h1>
+
+      <p class="subtitle">
+        The basic setting, structured and unstructured bandits, and why
+        recommendation systems fit naturally into this framework.
+      </p>
+
+      <p class="meta">Shirish Chinchanikar</p>
+    </header>
+
+    <div class="body">
+      <p class="article-lead">
+        Here, we learn the basic language of bandits and some of their applications.
+      </p>
+
+      <p>
+        In a simple setting, imagine that you are standing in front of a casino
+        machine with <em>K</em> slots, or arms, each giving a different random
+        reward. At every turn, you choose one arm to pull, observe its reward,
+        and then decide what to do in the next turn. You repeat this for
+        <em>n</em> turns.
+      </p>
+
+      <p>
+        The <strong>environment class</strong> is the set of all the different
+        kinds of machines you could face. A strategy tells you which arm to pull
+        based on everything you have observed so far.
+      </p>
+
+      <p>
+        In <strong>unstructured bandits</strong>, the arms are unrelated.
+        Learning something about one arm tells you nothing about the others.
+        In <strong>structured bandits</strong>, the arms are connected in some
+        way, so pulling one arm may also give you information about the rewards
+        of other arms.
+      </p>
+
+      <p>
+        Bandit algorithms have many applications. One example is recommendation
+        systems. Netflix must decide which shows, titles, or thumbnails to
+        display so that you are more likely to click on something.
+      </p>
+
+      <p>
+        After interacting with you several times, the system learns how you tend
+        to respond to different recommendations and uses this information to
+        choose what to show you next.
+      </p>
+
+      <div class="note">
+        <strong>Small technical note</strong>
+
+        <p>
+          The Netflix example is more specifically a contextual bandit problem,
+          because the decision depends on context such as the user, their history,
+          and the item being shown.
+        </p>
+      </div>
+
+      <p>
+        <a href="/writing/bandit-diaries/">← Back to Bandit Diaries</a>
+      </p>
+    </div>
+  </article>
+
+  <footer>
+    <span>Learn slowly. Explain clearly.</span>
+    <a href="/">Back home ↑</a>
+  </footer>
+</body>
+</html>

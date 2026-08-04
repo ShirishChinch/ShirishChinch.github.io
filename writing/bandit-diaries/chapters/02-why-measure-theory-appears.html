@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="Chapter 2 of Bandit Diaries: why sigma-algebras, measures, integration, and expectation appear in probability."
+  >
+
+  <title>Chapter 2: Why Measure Theory Appears | Bandit Diaries</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">SC</a>
+    <a href="/writing/bandit-diaries/">Bandit Diaries →</a>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <p class="eyebrow">Bandit Diaries · Chapter 2</p>
+
+      <h1>Why Measure Theory Appears</h1>
+
+      <p class="subtitle">
+        Why probability needs sigma-algebras, measures, and integration once
+        simple sums stop being enough.
+      </p>
+
+      <p class="meta">Shirish Chinchanikar</p>
+    </header>
+
+    <div class="body">
+      <p class="article-lead">
+        This chapter is about measure theory.
+      </p>
+
+      <p>
+        This is where we learn about measures, sigma-algebras, random variables,
+        integration, and expectation. I do not want to get into too much detail
+        here, so I will just write about why I feel measure theory is important.
+      </p>
+
+      <h2>Where sigma-algebras come from</h2>
+
+      <p>
+        Suppose you are trying to invent a notion of length on subsets of
+        \(\mathbb{R}\). You would want the lengths of disjoint sets to add up,
+        and translating a set should not change its length.
+      </p>
+
+      <p>
+        The problem is that there are some crazy subsets of \(\mathbb{R}\) for
+        which you cannot define length consistently. One such construction
+        comes from dividing \(\mathbb{R}\) into equivalence classes of
+        \(\mathbb{Q}\) in \(\mathbb{R}\), where two numbers are considered
+        equivalent if their difference is rational, and then choosing one
+        representative from each class.
+      </p>
+
+      <p>
+        Because of sets like these, we cannot safely define a measure on the
+        entire power set \(\mathcal P(\mathbb{R})\). Instead, we define a
+        sigma-algebra, which is a collection of sets on which a measure can be
+        defined consistently.
+      </p>
+
+      <p>
+        A probability measure then satisfies three main properties:
+        probabilities are non-negative, the probability of the entire outcome
+        space is \(1\), and the probability of a countable union of disjoint
+        sets is the sum of their probabilities.
+      </p>
+
+      <h2>Why integration appears</h2>
+
+      <p>
+        For a discrete random variable, we can calculate expectation using a sum:
+      </p>
+
+      <p>
+        \[
+        \mathbb E[X] = \sum_x x\,P(X=x).
+        \]
+      </p>
+
+      <p>
+        But when the random variable has a genuinely continuous distribution,
+        each individual outcome can have probability zero. So we cannot calculate
+        expectation by simply summing over the probabilities of individual points.
+      </p>
+
+      <p>
+        Instead, we define a probability measure over sets and integrate the
+        random variable with respect to that measure:
+      </p>
+
+      <p>
+        \[
+        \mathbb E[X] = \int X\,dP.
+        \]
+      </p>
+
+      <p>
+        Sometimes this probability measure has a density \(f\) with respect to
+        the usual notion of length on \(\mathbb{R}\). In that case, \(f\) is the
+        Radon–Nikodym derivative, and the expectation becomes
+      </p>
+
+      <p>
+        \[
+        \mathbb E[X] = \int x f(x)\,dx.
+        \]
+      </p>
+
+      <div class="note">
+        <strong>Main idea</strong>
+
+        <p>
+          Measure theory gives us one language for discrete, continuous, and even
+          stranger probability distributions. Without it, probability starts
+          breaking apart into a pile of separate cases.
+        </p>
+      </div>
+
+      <p>
+        <a href="/writing/bandit-diaries/">← Back to Bandit Diaries</a>
+      </p>
+    </div>
+  </article>
+
+  <footer>
+    <span>Learn slowly. Explain clearly.</span>
+    <a href="/">Back home ↑</a>
+  </footer>
+</body>
+</html>
